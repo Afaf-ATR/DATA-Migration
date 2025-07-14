@@ -1,0 +1,54 @@
+---psql
+Server [localhost]: localhost
+Database [postgres]: sakila
+Port [5432]: 5432
+Username [postgres]: postgres
+Mot de passe pour l'utilisateur postgres :
+
+psql (17.5)
+Attention : l'encodage console (850) diffère de l'encodage Windows (1252).
+            Les caractères 8 bits peuvent ne pas fonctionner correctement.
+            Voir la section « Notes aux utilisateurs de Windows » de la page
+            référence de psql pour les détails.
+Saisissez « help » pour l'aide.
+
+sakila=# \copy film TO 'C:/Users/afafa/Desktop/DEEPTECH/film.csv' DELIMITER ',' CSV HEADER;
+COPY 1000
+sakila=# \copy actor TO 'C:/Users/afafa/Desktop/DEEPTECH/ actor.csv' DELIMITER ',' CSV HEADER;
+COPY 200
+sakila=# \copy category TO 'C:/Users/afafa/Desktop/DEEPTECH/ category.csv' DELIMITER ',' CSV HEADER;
+COPY 16
+sakila=# \copy language TO 'C:/Users/afafa/Desktop/DEEPTECH/ language.csv' DELIMITER ',' CSV HEADER;
+COPY 7
+sakila=#
+ 
+
+--   powershell
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+Installez la dernière version de PowerShell pour de nouvelles fonctionnalités et améliorations ! https://aka.ms/PSWindows
+
+PS C:\WINDOWS\system32> cd "C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin"
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin> .\mongoimport --db sakila_mongo --collection film --file "C:/Users/afafa/Desktop/DEEPTECH/film.json" --jsonArray
+2025-07-14T10:13:20.507+0100    connected to: mongodb://localhost/
+2025-07-14T10:13:20.783+0100    1000 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin> .\mongoimport --db sakila_mongo --collection actor --file "C:/Users/afafa/Desktop/DEEPTECH/actor.json" –jsonArray
+2025-07-14T10:15:07.250+0100    error parsing command line options: error parsing positional arguments: cannot use both --file and a positional argument to set the input file
+2025-07-14T10:15:07.276+0100    try 'mongoimport --help' for more information
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin> .\mongoimport --db sakila_mongo --collection actor --file "C:/Users/afafa/Desktop/DEEPTECH/actor.json" --jsonArray
+>>
+2025-07-14T10:17:47.560+0100    connected to: mongodb://localhost/
+2025-07-14T10:17:47.644+0100    200 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin> .\mongoimport --db sakila_mongo --collection category --file "C:/Users/afafa/Desktop/DEEPTECH/category.json" --jsonArray
+2025-07-14T10:18:30.798+0100    connected to: mongodb://localhost/
+2025-07-14T10:18:30.864+0100    16 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin> .\mongoimport --db sakila_mongo --collection language --file "C:/Users/afafa/Desktop/DEEPTECH/ language.json" --jsonArray
+2025-07-14T10:18:41.032+0100    Failed: open C:\Users\afafa\Desktop\DEEPTECH\ language.json: The system cannot find the file specified.
+2025-07-14T10:18:41.057+0100    0 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin> .\mongoimport --db sakila_mongo --collection language --file "C:/Users/afafa/Desktop/DEEPTECH/language.json" --jsonArray
+2025-07-14T10:19:47.075+0100    connected to: mongodb://localhost/
+2025-07-14T10:19:47.152+0100    7 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\Program Files\MongoDB\Server\8.0\bin\mongodb-database-tools-windows-x86_64-100.12.2\bin>
+ 
+
